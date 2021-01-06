@@ -1,0 +1,2 @@
+*.info
+ansible_hosts/
