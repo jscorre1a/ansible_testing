@@ -1,0 +1,25 @@
+- name: install apache & php
+  hosts: azure
+  become: true
+  become_user: root
+  gather_facts: true
+  tasks:
+    - name: "Install apache2"
+      package: name=apache2 state=present
+    - name: "Install apache2-php5"
+      package: name=libapache2-mod-php state=present
+    - name: "Install php-cli"
+      package: name=php-cli state=present
+    #- name: "Install php-mcrypt"
+    #  package: name=php-mcrypt state=present
+    - name: "Install php-dev"
+      package: name=php-dev state=present
+    - name: "Install libmcrypt-dev"
+      package: name=libmcrypt-dev state=present
+    - name: "Install php-pear"
+      package: name=php-pear state=present
+    - name: "Install php-gd"
+      package: name=php-gd state=present
+    #- name: "Lets try installing raw mcrypt"
+    #  raw: pecl channel-update pecl.php.net && pecl install mcrypt-1.0.1
+    #  I don't know how to do this yet
