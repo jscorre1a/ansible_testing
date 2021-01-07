@@ -10,6 +10,8 @@
       package: name=libapache2-mod-php state=present
     - name: "Install php-cli"
       package: name=php-cli state=present
+    - name: "Install php-mysql"
+      package: name=php-mysql state=present
     #- name: "Install php-mcrypt"
     #  package: name=php-mcrypt state=present
     - name: "Install php-dev"
@@ -20,6 +22,11 @@
       package: name=php-pear state=present
     - name: "Install php-gd"
       package: name=php-gd state=present
-    #- name: "Lets try installing raw mcrypt"
-    #  raw: pecl channel-update pecl.php.net && pecl install mcrypt-1.0.1
+    - name: "Lets try installing raw mcrypt - pecl update"
+      raw: pecl channel-update pecl.php.net
+    #- name: "Install pecl mcrypt"
+    #  expect:
+    #    command: pecl install mcrypt-1.0.1
+    #    responses:
+    #      'libmcrypt prefix? [autodetect] : ': ''
     #  I don't know how to do this yet

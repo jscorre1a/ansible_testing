@@ -1,0 +1,17 @@
+- name: Install MySQL for production ready server
+  hosts: azure
+  become: True
+  become_user: root
+  tasks:
+    - name: Install pip
+      apt:
+        update_cache: yes
+        name:
+          - python3-pip
+
+    - name: Install pexpect
+      pip:
+        name: pexpect
+    - name: Install pymysql
+      pip:
+        name: pymysql

@@ -4,6 +4,9 @@
   become_user: root
   gather_facts: true
 
+- name: Include Pip
+  import_playbook: pip.yml
+
 - name: Include Apache
   import_playbook: apache.yml
 
