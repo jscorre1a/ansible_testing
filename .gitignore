@@ -1,2 +1,3 @@
 *.info
 ansible_hosts/
+local_testing/
